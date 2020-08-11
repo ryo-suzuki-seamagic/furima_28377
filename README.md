@@ -1,24 +1,62 @@
-# README
+# usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|  Column     |  Type      |  Options      |
+| ----------- | ---------- | ------------- |
+|  name       |  string    |  null: false  |
+|  email      |  string    |  null: false  |
+| password    |  stling    |  null: false  |
 
-Things you may want to cover:
+### Association
+- has_one :profil
+- has_many :items
+- has_many :comments
 
-* Ruby version
+# profilsテーブル
 
-* System dependencies
+|  Column     |  Type      |  Options     |
+|-------------|------------|--------------|
+| birthday    |  integer   |  null: false |
+| first-name  |  string    |  null: false |
+| family-name |  string    |  null: false |
 
-* Configuration
+### Association
+- belongs_to :user
 
-* Database creation
+# itemsテーブル
 
-* Database initialization
+|  Column     |  Type      |  Options                       |
+|-------------|------------|------------------------------- |
+|  image      |  string    |  null: false                   |
+|  title      |  string    |  null: false                   |
+|  text       |  text      |  null: false                   |
+|  money      |  integer   |  null: false                   |
+|  user-id    |  references|  null: false  foreign_key: ture|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_many :comments
+- has_one :purchase
 
-* Services (job queues, cache servers, search engines, etc.)
+# commentsテーブル
 
-* Deployment instructions
+|  Column     |  Type      |  Options                        |
+|-------------|------------|---------------------------------|
+|  text       |  text      |  null: false                    |
+|  user-id    |  references|  null: false,  foreign_key: ture|
+|  item-id    |  references|  null: false,  foreign_key: ture|
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :item
+
+# purchasesテーブル
+
+|  Column       |  Type      |  Options     |
+|---------------|------------|--------------|
+|  user         |  string    |  null: false |
+|  address      |  text      |  null: false |
+|  phone-number |  integer   |  null: false |
+
+### Association
+
+- belongs_to :item

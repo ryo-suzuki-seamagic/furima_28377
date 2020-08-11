@@ -1,4 +1,4 @@
-# usersテーブル
+## usersテーブル
 
 |  Column     |  Type      |  Options      |
 | ----------- | ---------- | ------------- |
@@ -11,7 +11,7 @@
 - has_many :items
 - has_many :comments
 
-# profilsテーブル
+## profilsテーブル
 
 |  Column     |  Type      |  Options     |
 |-------------|------------|--------------|
@@ -22,7 +22,7 @@
 ### Association
 - belongs_to :user
 
-# itemsテーブル
+## itemsテーブル
 
 |  Column     |  Type      |  Options                       |
 |-------------|------------|------------------------------- |
@@ -37,7 +37,7 @@
 - has_many :comments
 - has_one :purchase
 
-# commentsテーブル
+## commentsテーブル
 
 |  Column     |  Type      |  Options                        |
 |-------------|------------|---------------------------------|
@@ -49,7 +49,7 @@
 - belongs_to :user
 - belongs_to :item
 
-# purchasesテーブル
+## purchasesテーブル
 
 |  Column       |  Type      |  Options     |
 |---------------|------------|--------------|

@@ -26,15 +26,18 @@
 
 ## itemsテーブル
 
-|  Column     |  Type      |  Options                       |
-|-------------|------------|------------------------------- |
-|  image      |  string    |  null: false                   |
-|  title      |  string    |  null: false                   |
-|  text       |  text      |  null: false                   |
-|  genre-id   |  integer   |  null: false                   |
-|  status-id  |  integer   |  null: false                   |
-|  money      |  integer   |  null: false                   |
-|  user       |  references|  null: false  foreign_key: ture|
+|  Column           |  Type      |  Options                       |
+|-------------------|------------|------------------------------- |
+|  image            |  string    |  null: false                   |
+|  title            |  string    |  null: false                   |
+|  text             |  text      |  null: false                   |
+|  kategory-id      |  integer   |  null: false                   |
+|  status-id        |  integer   |  null: false                   |
+|  delivery-fee-id  |  integer   |  null: false                   |
+|  from-id          |  integer   |  null: false                   |
+|  days-id          |  integer   |  null: false                   |
+|  price            |  integer   |  null: false                   |
+|  user             |  references|  null: false  foreign_key: ture|
 
 ### Association
 - belongs_to :user
@@ -70,10 +73,15 @@
 ## addressesテーブル
 
 
-|  Column     |  Type      |  Options                        |
-|-------------|------------|---------------------------------|
-|  address    |  text      |  null: false                    |
-|  purchase   |  references|  null: false  foreign_key: ture |
+|  Column         |  Type      |  Options                        |
+|-----------------|------------|---------------------------------|
+|  address        |  text      |  null: false                    |
+|  purchase       |  references|  null: false  foreign_key: ture |
+|  phone-number   |  string    |  null: false                    |
+|  card-number    |  string    |  null: false                    |
+|  expiration     |  datetime  |  null: false                    |
+|  security-code  |  string    |  null: false                    |
+
 
 ### Association
 - belongs_to :purchase

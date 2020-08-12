@@ -2,14 +2,17 @@
 
 ## usersテーブル
 
-|  Column     |  Type      |  Options      |
-| ----------- | ---------- | ------------- |
-|  name       |  string    |  null: false  |
-|  email      |  string    |  null: false  |
-| password    |  stling    |  null: false  |
-| birthday    |  integer   |  null: false  |
-| first-name  |  string    |  null: false  |
-| family-name |  string    |  null: false  |
+|  Column          |  Type      |  Options      |
+| ---------------- | ---------- | ------------- |
+|  name            |  string    |  null: false  |
+|  email           |  string    |  null: false  |
+| password         |  stling    |  null: false  |
+| birthday         |  integer   |  null: false  |
+| first-name       |  string    |  null: false  |
+| family-name      |  string    |  null: false  |
+| first-name-kana  |  string    |  null: false  |
+| family-name-kana |  string    |  null: false  |
+
 
 
 ### Association
@@ -28,10 +31,10 @@
 |  image      |  string    |  null: false                   |
 |  title      |  string    |  null: false                   |
 |  text       |  text      |  null: false                   |
+|  genre-id   |  integer   |  null: false                   |
+|  status-id  |  integer   |  null: false                   |
 |  money      |  integer   |  null: false                   |
 |  user       |  references|  null: false  foreign_key: ture|
-|  fee        |  integer   |  null: false                   |
-|  profit     |  integer   |  null: false                   |
 
 ### Association
 - belongs_to :user
@@ -52,14 +55,25 @@
 
 
 
-## purchasessテーブル
+## purchasesテーブル
 
 |  Column     |  Type      |  Options                        |
 |-------------|------------|---------------------------------|
-|  address    |  text      |  null: false                    |
 |  user       |  references|  null: false,  foreign_key: ture|
 |  item       |  references|  null: false,  foreign_key: ture|
 
 ### Association
 - belongs_to :user
 - belongs_to :item 
+- has_one :address
+
+## addressesテーブル
+
+
+|  Column     |  Type      |  Options                        |
+|-------------|------------|---------------------------------|
+|  address    |  text      |  null: false                    |
+|  purchase   |  references|  null: false  foreign_key: ture |
+
+### Association
+- belongs_to :purchase

@@ -75,11 +75,11 @@
 
 |  Column         |  Type      |  Options                        |
 |-----------------|------------|---------------------------------|
-|  purchase-id    |  integer   |  null: false                    |
-|  postal-code    |  integer   |  null: false                    |
+|  purchase-id    |  integer   |  null: false  foreign_key:true  |
+|  postal-code    |  string    |  null: false                    |
 |  prefecture-id  |  integer   |  null: false                    |
 |  muncipalities  |  string    |  null: false                    |
-|  address        |  integer   |  null: false                    |
+|  address        |  string    |  null: false                    |
 |  building-name  |  string    |  null: ture                     |
 |  phone-number   |  string    |  null: false                    |
 

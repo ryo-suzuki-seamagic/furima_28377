@@ -75,12 +75,12 @@
 
 |  Column         |  Type      |  Options                        |
 |-----------------|------------|---------------------------------|
-|  address        |  text      |  null: false                    |
-|  purchase       |  references|  null: false  foreign_key: ture |
+|  postal-code    |  text      |  null: false                    |
+|  purchase-id    |  integer   |  null: false                    |
+|  muncipalities  |  integer   |  null: false                    |
+|  address        |  integer   |  null: false                    |
+|  building-name  |  integer   |  null: ture                     |
 |  phone-number   |  string    |  null: false                    |
-|  card-number    |  string    |  null: false                    |
-|  expiration     |  datetime  |  null: false                    |
-|  security-code  |  string    |  null: false                    |
 
 
 ### Association

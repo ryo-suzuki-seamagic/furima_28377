@@ -7,7 +7,7 @@
 |  name            |  string    |  null: false  |
 |  email           |  string    |  null: false  |
 | password         |  stling    |  null: false  |
-| birthday         |  integer   |  null: false  |
+| birthday         |  date      |  null: false  |
 | first-name       |  string    |  null: false  |
 | family-name      |  string    |  null: false  |
 | first-name-kana  |  string    |  null: false  |
@@ -75,12 +75,13 @@
 
 |  Column         |  Type      |  Options                        |
 |-----------------|------------|---------------------------------|
-|  postal-code    |  text      |  null: false                    |
 |  purchase-id    |  integer   |  null: false                    |
-|  muncipalities  |  integer   |  null: false                    |
+|  postal-code    |  integer   |  null: false                    |
+|  prefecture-id  |  integer   |  null: false                    |
+|  muncipalities  |  string    |  null: false                    |
 |  address        |  integer   |  null: false                    |
-|  building-name  |  integer   |  null: ture                     |
-|  phone-number   |  string    |  null: false                    |
+|  building-name  |  string    |  null: ture                     |
+|  phone-number   |  integer   |  null: false                    |
 
 
 ### Association

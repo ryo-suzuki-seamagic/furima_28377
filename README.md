@@ -81,7 +81,7 @@
 |  muncipalities  |  string    |  null: false                    |
 |  address        |  integer   |  null: false                    |
 |  building-name  |  string    |  null: ture                     |
-|  phone-number   |  integer   |  null: false                    |
+|  phone-number   |  string    |  null: false                    |
 
 
 ### Association

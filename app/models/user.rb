@@ -25,7 +25,7 @@ class User < ApplicationRecord
 # 生年月日が必須であること
 
       with_options presence: true do
-        validates :name
+        validates :nickname
         validates :email, uniqueness: true,
                     inclusion: { in: '@'},
                     format: { with: /\A([a-zA-Z0-9]{6,})\z/ },

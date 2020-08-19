@@ -17,11 +17,12 @@ class User < ApplicationRecord
     validates :password,
               format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/ },
               confirmation: true
-
-    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
-    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
-    validates :first_name_kana, format: { with: /\A[ァ-ン]+\z/ }
-    validates :last_name_kana, format: { with: /\A[ァ-ン]+\z/ }
+      NAME_VALIDATES = (/\A[ぁ-んァ-ン一-龥]+\z/)
+    validates :first_name, format: { with: NAME_VALIDATES }
+    validates :last_name, format: { with: NAME_VALIDATES }
+      NAME_KANA_VALIDATES = (/\A[ァ-ン]+\z/)
+    validates :first_name_kana, format: { with:  NAME_KANA_VALIDATES }
+    validates :last_name_kana, format: { with:  NAME_KANA_VALIDATES }
     validates :birthday
   end
 end

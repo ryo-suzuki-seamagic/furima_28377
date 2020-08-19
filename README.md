@@ -4,14 +4,14 @@
 
 |  Column          |  Type      |  Options      |
 | ---------------- | ---------- | ------------- |
-|  name            |  string    |  null: false  |
+|  nickname        |  string    |  null: false  |
 |  email           |  string    |  null: false  |
 | password         |  stling    |  null: false  |
 | birthday         |  date      |  null: false  |
+| last-name        |  string    |  null: false  |
 | first-name       |  string    |  null: false  |
-| family-name      |  string    |  null: false  |
+| last-name-kana   |  string    |  null: false  |
 | first-name-kana  |  string    |  null: false  |
-| family-name-kana |  string    |  null: false  |
 
 
 

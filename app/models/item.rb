@@ -26,16 +26,20 @@ class Item < ApplicationRecord
     with_options presence: true do
       validates :title
       validates :text
+      validates :price, format:{ with:/\A[0-9] [300 - 9999999]+\z/  }
+    end
+
+    with_options numericality: { other_tean: 1 } do
       validates :kategory
       validates :status
       validates :delivery_fee
       validates :from
       validates :day
-      validates :price, format:{ with:/\A[300 - 999999]+\z/  }
+    end
     
     
 
-    end
+    
 
 
 

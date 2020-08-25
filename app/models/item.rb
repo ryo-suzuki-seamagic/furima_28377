@@ -14,7 +14,6 @@ class Item < ApplicationRecord
 
   # バリデーション
 
-
   with_options presence: true do
     validates :image
     validates :title

@@ -24,13 +24,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
     if @item.update(item_params)
-           @item.valid?
-        redirect_to root_path
+      @item.valid?
+      redirect_to root_path
     else
       render :edit, notice: '編集できません'
     end
@@ -41,7 +40,7 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:image, :title, :text, :kategory_id, :status_id, :delivery_fee_id, :from_id, :day_id, :price).merge(user_id: current_user.id)
   end
-  
+
   def set_item
     @item = Item.find(params[:id])
   end

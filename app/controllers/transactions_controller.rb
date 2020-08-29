@@ -1,7 +1,8 @@
 class TransactionsController < ApplicationController
 
   before_action :authenticate_user!
-
+  before_action :item_user
+  
   def index
     @item = Item.find(params[:item_id])
   end
@@ -25,6 +26,12 @@ class TransactionsController < ApplicationController
   
   private
 
+  def item_user
+    @item = Item.find(params[:item_id])
+      if @item.user_id == current_user.id 
+        redirect_to root_path
+      end
+  end
 
     def purchase_params
       params.require(:purchase_address).permit(:postal_code, :prefecure_id, :muncipalities, :address, :building_name, :phone_number, :price, :token )

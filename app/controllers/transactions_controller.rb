@@ -1,14 +1,17 @@
 class TransactionsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @item = Item.find(params[:item_id])
   end
 
-  def new
-    @purchase = PurchaseAddress.new 
-  end
+  # def new
+  #   @purchase = PurchaseAddress.new 
+  # end
 
   def create
+    
     @purchase = PurchaseAddress.new(purchase_params)
     if  @purchase.valid?
       pay_item
@@ -24,7 +27,7 @@ class TransactionsController < ApplicationController
 
 
     def purchase_params
-      params.permit(:postal_code, :prefecure_id, :muncipalities, :address, :building_name, :phone_number, :price, :token )
+      params.require(:purchase_address).permit(:postal_code, :prefecure_id, :muncipalities, :address, :building_name, :phone_number, :price, :token )
     end
 
     def pay_item

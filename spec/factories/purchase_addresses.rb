@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :purchase_address do
+     token                          { Faker::Internet.password}
     postal_code                    { '000-0000' }
     prefecure_id                   { Faker::Number.within(range: 2..48) }
     muncipalities                  { 'テスト市テスト町' }

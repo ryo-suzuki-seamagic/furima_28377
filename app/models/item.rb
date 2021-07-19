@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_one :purchase
-  has_one_attached :image
+  has_many_attached :images
 
   belongs_to_active_hash :kategory
   belongs_to_active_hash :status
